@@ -37,7 +37,9 @@ echo "$HOST_NAME,$HOST_IP $HOST_FINGERPRINT" \
 # "args" from main.workflow get append to below call
 # these include source, user, $HOST and target
 printf -- 'Uploading assets... '
-sh -c "rsync -e 'ssh -o StrictHostKeyChecking=no' $*"
+sh -c "rsync -e 'ssh -o StrictHostKeyChecking=no' $*" > output
+
+cat output
 
 printf -- '\033[32m Deployment successful! \033[0m\n'
 printf -- '\n'
