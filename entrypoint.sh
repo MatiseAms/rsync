@@ -34,6 +34,8 @@ echo "$HOST_NAME,$HOST_IP $HOST_FINGERPRINT" \
   >> "$ssh_path/known_hosts"
 # $HOST_NAME is used in the above as well as in the below; that's why it is an env
 
+ssh -v $LOGIN_USER exit
+
 # "args" from main.workflow get append to below call
 # these include source, user, $HOST and target
 printf -- 'Uploading assets... '
